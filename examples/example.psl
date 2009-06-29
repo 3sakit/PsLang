@@ -1,0 +1,21 @@
+def add(x, y) {
+	return (x + y);
+}
+
+def sub(x, y) {
+	return (x - y);
+}
+
+def mlt(x, y) {
+	return (x * y);
+}
+
+def div(x, y) {
+	return (x / y);
+}
+
+printf("This is an example of PsLang.\n");
+printf("3+4 = %d\n", add(3, 4));
+printf("4-3 = %d\n", sub(4, 3));
+printf("4*3 = %d\n", mlt(4, 3));
+printf("4/3 = %d\n", div(4, 3));
