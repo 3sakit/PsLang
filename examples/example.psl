@@ -14,6 +14,19 @@ def div(x, y) {
 	return (x / y);
 }
 
+def foo(x) {
+	if (x == 1) {
+		return True;
+	}
+	cnt = 0;
+	while (cnt < 11) { cnt++; }
+	while (cnt > 0) { cnt--; }
+	while (cnt <= 10) { cnt++; }
+	while (cnt >= 0 ){ cnt--; }
+	while (cnt != 10) { cnt++; }
+	while (cnt == 10) { cnt--; }
+}
+
 printf("This is an example of PsLang.\n");
 printf("3+4 = %d\n", add(3, 4));
 printf("4-3 = %d\n", sub(4, 3));

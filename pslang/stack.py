@@ -1,14 +1,15 @@
 import excepts
+import types
 
 class Stack:
 	''' '''
 	def __init__(self):
 		''' '''
-		# This is our stack
-		self.stack = []
+		# This is our lang_stack
+		self.lang_stack = []
 		# Tweak this to adjust the number of past elements tracked
 		self.max_last = 5
-		self.last = []
+		self.last_stack = []
 		# Don't tweak this
 		self.current = None
 
@@ -17,19 +18,16 @@ class Stack:
 		if item == False:
 			raise exceptions.InvalidArgs
 		else:
-			self.stack.append(item)
-			self.last.append(item)
-			while len(self.last) > self.max_last:
-				self.last.pop(0)
+			self.lang_stack.append(item)
+			self.last_stack.append(item)
+			while len(self.last_stack) > self.max_last:
+				self.last_stack.pop(0)
 	
 	def pop(self, index=False):
 		'''	'''
-		stack_end = (len(self.last)-1)
 		if index == False:
-			self.last.pop(stack_end)
-		else:
-			self.stack.pop(index)
-			if index <= self.max_last:
-				self.last.pop(index)
-
+			index = 0
+		if type(index) != types.IntType:
+			raise excepts.InvalidArgs
+		self.lang_stack.pop(index)
 

@@ -1,25 +1,18 @@
 import shlex
+import stack
 import os
 
-class Scanner:
+class Scanner(stack.Stack):
 	'''	'''
 	def __init__(self, file=None):
 		'''	'''
 		if file == None:
 			raise exceptions.InvalidArgs
+		stack.Stack.__init__(self)
 		self.lexxer = shlex.shlex(instream=open(file, 'r'))
-		self.stack = Stack()
 		try:
 			while 1:
-				self.stack.push(self.lexxer.next())
+				self.push(self.lexxer.next())
 		except StopIteration:
 			pass
 
-try:
-	import sys
-	o = Scanner(file=sys.argv[1])
-	print dir(o)
-	print o.stack.stack
-	print o.stack.last
-except:
-	pass
