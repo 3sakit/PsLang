@@ -14,8 +14,7 @@ setup(name = "pslang",
     url = "http://www.3hci.net",
     packages = ['pslang'],
     package_data = {'pslang' : files },
-    #'runner' is in the root.
-    scripts = ["bin/pslang"],
+    scripts = ["bin/pslang", "bin/psldb"],
     long_description = """
     A simple functional programming language, made the for the sole express purpose,
     of learning how to do it.
