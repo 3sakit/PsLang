@@ -1,3 +1,5 @@
+#!/usr/bin/env pslang
+
 def add(x, y) {
 	return (x + y);
 }
