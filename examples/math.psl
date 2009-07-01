@@ -1,0 +1,23 @@
+"Math"
+"0.1.0"
+"Mike 'Fuzzy' Partin <fuzzy@3hci.net"
+
+def add(x, y) {
+	return (x+y);
+}
+
+def sub(x, y) {
+	return (x-y);
+}
+
+def mlt(x, y) {
+	return (x*y);
+}
+
+def div(x, y) {
+	return (x/y);
+}
+
+def sqrd(x) {
+	return (x*x);
+}

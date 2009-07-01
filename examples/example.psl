@@ -1,20 +1,6 @@
 #!/usr/bin/env pslang
-
-def add(x, y) {
-	return (x + y);
-}
-
-def sub(x, y) {
-	return (x - y);
-}
-
-def mlt(x, y) {
-	return (x * y);
-}
-
-def div(x, y) {
-	return (x / y);
-}
+include math
+include stdlib
 
 def foo(x) {
 	if (x == 1) {
@@ -27,6 +13,7 @@ def foo(x) {
 	while (cnt >= 0 ){ cnt--; }
 	while (cnt != 10) { cnt++; }
 	while (cnt == 10) { cnt--; }
+	for (a=1; a <= 10; a++) { b = 1; }
 }
 
 printf("This is an example of PsLang.\n");

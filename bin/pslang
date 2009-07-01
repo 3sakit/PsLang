@@ -4,12 +4,9 @@ from pslang import parser
 
 
 def main():
-	print 'Parsing '+sys.argv[1]
 	o = parser.Parser(sys.argv[1])
 	o.grok()
-	print dir(o)
 	print o.lang_stack
-
 
 if __name__ == '__main__':
 	main()

@@ -1,0 +1,7 @@
+"StdLib"
+"0.1.0"
+"Mike 'Fuzzy' Partin <fuzzy@3hci.net>"
+
+def uname(nil) {
+	return nil;
+}

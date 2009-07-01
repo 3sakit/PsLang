@@ -1,18 +1,20 @@
-import shlex
-import stack
+import lexxer, stack 
 import os
 
-class Scanner(stack.Stack):
+class Scanner(lexxer.Lexxer, stack.Stack):
 	'''	'''
 	def __init__(self, file=None):
 		'''	'''
 		if file == None:
 			raise exceptions.InvalidArgs
 		stack.Stack.__init__(self)
-		self.lexxer = shlex.shlex(instream=open(file, 'r'))
+		lexxer.Lexxer.__init__(self, file)
+		#self.lexxer = shlex.shlex(instream=open(file, 'r'))
+		self.source = 'include'
+		self.debug = False 
 		try:
 			while 1:
-				self.push(self.lexxer.next())
+				self.push(self.next())
 		except StopIteration:
 			pass
 
