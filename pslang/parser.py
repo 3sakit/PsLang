@@ -2,22 +2,18 @@ import os, sys, time, re, types
 import excepts, scanner, language
 
 class Parser(scanner.Scanner, language.PsLang):
-	def __init__(self, file=False):
+	def __init__(self, file=False, LibPath=None):
 		if file == False or not os.path.isfile(file):
 			raise excepts.InvalidArgs
-		scanner.Scanner.__init__(self, file)
-		language.PsLang.__init__(self, self.lang_stack)
-
-	def _inc(self, file=None):
-		fname = '/root/git/pslang/examples/'+self.lang_stack[(self.tkn_pos+1)]+'.psl'
-		print 'Including file: '+fname
-		spec = self.sourcehook(fname)
-		if spec:
-			(nfile, nstream) = spec
-			self.push_source(nstream, nfile)
+		if LibPath == None:
+			self.LibPath = ['./']
 		else:
-			print 'booboo'
-		return True
+			if type(LibPath) != types.ListType and type(LibPath) != types.StringType:
+				raise excepts.InvalidArgs, 'class Parser() given invalid args: LibPath must be a : seperated string, or a list of strings.'
+			else:
+				self.LibPath = LibPath
+		scanner.Scanner.__init__(self, file, self.LibPath)
+		language.PsLang.__init__(self, self.lang_stack)
 
 	# Rework this to use the keywords tuples
 	# This method is going to get *FUCKING HUGE*

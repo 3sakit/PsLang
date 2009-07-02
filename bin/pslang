@@ -4,7 +4,7 @@ from pslang import parser
 
 
 def main():
-	o = parser.Parser(sys.argv[1])
+	o = parser.Parser(sys.argv[1], ['./', '/root/git/pslang/examples/'])
 	o.grok()
 	print o.lang_stack
 

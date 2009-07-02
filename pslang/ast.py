@@ -24,5 +24,5 @@ class Ast:
 	def dump_namespace(self):
 		pprint.pprint(self.namespace)
 
-	def new_parent(self, name)
+	def new_parent(self, name):
 		return
